@@ -1,9 +1,18 @@
 {
   "name": "howxm-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Official NPM wrapper for the howxm JavaScript client",
   "main": "index.js",
   "repository": "https://github.com/jinshuju/howxm-js.git",
   "author": "fang.yang <yangfang2028@126.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "README.md"
+  ],
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }

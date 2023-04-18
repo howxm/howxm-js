@@ -4,7 +4,7 @@ function appendHeadScript(scriptText: string, scriptId: string, appId: string): 
   try {
     const existingScript = document.getElementById(scriptId) as HTMLScriptElement
     if (existingScript) {
-      existingScript?.getAttribute('appId') !== appId && _howxm?.('updateHowxm', appId)
+      existingScript?.getAttribute('appId') !== appId && (window as unknown as IWindowHowxmEmbedded)._howxm?.('updateHowxm', appId)
       return true
     }
     const script = document.createElement('script')

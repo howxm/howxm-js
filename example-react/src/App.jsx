@@ -7,8 +7,8 @@ const myLogger = console.info
 
 const App = () => {
   const { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, setExtraAttributes } = useHowxm()
-  const campaignId = 'd2b44c1f68925adbfe03738b0ac9ecf9'
-  const appId = 'b3596cfb-9e91-4271-b5c0-c82fa8c3f0de'
+  const campaignId = '<Your published campaignId>'
+  const appId = '<Your appId>'
   const uid = 'my-uid'
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Howxm SDK Example</h1>
+      <h1>Howxm SDK React Example</h1>
       <button onClick={handleOpenClick}>Open</button>
       <button onClick={handleCheckOpenClick}>CheckOpen</button>
       <button onClick={handleTriggerEvent}>TriggerEvent</button>

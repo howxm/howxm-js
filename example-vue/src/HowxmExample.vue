@@ -9,11 +9,9 @@
 </template>
 
 <script>
-import useHowxm from 'howxm-js'
-
+import { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, setExtraAttributes } from 'howxm-js'
 const myLogger = console.info
 
-const { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, setExtraAttributes } = useHowxm()
 const campaignId = '<Your published campaignId>'
 const appId = '<Your appId>'
 const uid = 'my-uid'
@@ -32,7 +30,7 @@ export default {
         myLogger('openHowxm finished')
       })
     },
-    handleCheckOpenClick () {
+    handleCheckOpenClick() {
       checkOpenHowxm(
         campaignId,
         uid,
@@ -44,12 +42,12 @@ export default {
         }
       )
     },
-    handleTriggerEvent () {
+    handleTriggerEvent() {
       eventHowxm('test1', {}, () => {
         myLogger('triggerEvent success')
       })
     },
-    handleSetExtraAttributes () {
+    handleSetExtraAttributes() {
       const extraAttrs = {
         plan: 'basic',
         vip_level: '1',
@@ -57,7 +55,7 @@ export default {
       setExtraAttributes(extraAttrs, () => {
         myLogger('setExtraAttributes success')
       })
-    }
+    },
   },
 }
 </script>

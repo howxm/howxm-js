@@ -18,17 +18,16 @@ npm install --save howxm-js
 
 ```tsx
 import React from 'react'
-import useHowxm from 'howxm-js'
+import { initHowxm } from 'howxm-js'
 
 const myLogger = console.info
 
 const HowxmReadyApp = () => {
-  const { initHowxm } = useHowxm()
   const appId = '<Your App ID>'
 
   useEffect(() => {
     initHowxm(appId, myLogger)
-  }, [initHowxm])
+  }, [])
 
   return <App />
 }
@@ -38,12 +37,11 @@ const HowxmReadyApp = () => {
 
 ```tsx
 import React from 'react'
-import useHowxm from 'howxm-js'
+import { identifyHowxm } from 'howxm-js'
 
 const myLogger = console.info
 
 const MyCustomComponent = () => {
-  const { identifyHowxm } = useHowxm()
   const customerInfo = {
     uid: '00000001', // 用户唯一ID, 默认字段, 必填，string 类型
   }
@@ -58,12 +56,11 @@ const MyCustomComponent = () => {
 
 ```tsx
 import React from 'react'
-import useHowxm from 'howxm-js'
+import { checkOpenHowxm } from 'howxm-js'
 
 const myLogger = console.info
 
 const MyCustomComponent = () => {
-  const { checkOpenHowxm } = useHowxm()
   const campaignId = '<You Campaign ID>'
   const uid = '00000001'
 
@@ -86,12 +83,11 @@ const MyCustomComponent = () => {
 
 ```tsx
 import React from 'react'
-import useHowxm from 'howxm-js'
+import { openHowxm } from 'howxm-js'
 
 const myLogger = console.info
 
 const MyCustomComponent = () => {
-  const { openHowxm } = useHowxm()
   const campaignId = '<You Campaign ID>'
   const customerInfo = {
     uid: '00000001', // 用户唯一ID, 默认字段, 必填，string 类型
@@ -112,12 +108,11 @@ const MyCustomComponent = () => {
 
 ```tsx
 import React from 'react'
-import useHowxm from 'howxm-js'
+import { eventHowxm } from 'howxm-js'
 
 const myLogger = console.info
 
 const MyCustomComponent = () => {
-  const { eventHowxm } = useHowxm()
   const eventCode = '<event code>'
   const eventAttrs = {
     plan: 'free',
@@ -136,12 +131,11 @@ const MyCustomComponent = () => {
 
 ```tsx
 import React from 'react'
-import useHowxm from 'howxm-js'
+import { setExtraAttributes } from 'howxm-js'
 
 const myLogger = console.info
 
 const MyCustomComponent = () => {
-  const { setExtraAttributes } = useHowxm()
   const extraAttrs = {
     plan: 'basic',
     vip_level: '1',
@@ -154,6 +148,7 @@ const MyCustomComponent = () => {
 ```
 
 ## License
+
 MIT © [jinshuju](https://github.com/jinshuju)
 
 更多信息，请查看我们的[帮助文档](https://howxm.com/help/articles/npm-web-sdk-intro)。

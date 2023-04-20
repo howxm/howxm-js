@@ -1,12 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-import useHowxm from 'howxm-js'
+import { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, setExtraAttributes } from 'howxm-js'
 
 const myLogger = console.info
 
 const App = () => {
-  const { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, setExtraAttributes } = useHowxm()
   const campaignId = '<Your published campaignId>'
   const appId = '<Your appId>'
   const uid = 'my-uid'
@@ -16,7 +15,7 @@ const App = () => {
     if (isReady) {
       identifyHowxm({ uid })
     }
-  }, [initHowxm, identifyHowxm])
+  }, [])
 
   const handleOpenClick = () => {
     openHowxm(campaignId, { uid }, { price: 150 }, () => {

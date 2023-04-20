@@ -1,6 +1,6 @@
-import useHowxm from '../index'
+import { initHowxm } from '../index'
 
-describe.only('Tests useHowxm without window', () => {
+describe.only('Tests howxm-js without window', () => {
   beforeAll(() => {
     console.error = jest.fn()
   })
@@ -8,8 +8,6 @@ describe.only('Tests useHowxm without window', () => {
   it('should fail on initializing howxm without window', () => {
     const consoleSpy = jest.spyOn(console, 'error')
     const oldWindow = globalThis.window
-
-    const { initHowxm } = useHowxm()
 
     delete globalThis.window
 

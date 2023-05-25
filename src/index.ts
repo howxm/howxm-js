@@ -12,8 +12,12 @@ import { TAttribute, TCustomerInfo } from './types'
 export const readyState: boolean = checkReadyState()
 
 export const initHowxm = (appId: string, callback?: (...data: unknown[]) => void): boolean => {
+   return initHowxmWithCustomSdkUrl(appId, undefined, callback)
+}
+
+export const initHowxmWithCustomSdkUrl = (appId: string, customSdkUrl?: string, callback?: (...data: unknown[]) => void): boolean => {
   try {
-    initScript(appId)
+    initScript(appId, customSdkUrl)
     if (callback && typeof callback === 'function') callback(`Howxm ready: true`)
 
     return true

@@ -22,11 +22,12 @@ function appendHeadScript(scriptText: string, scriptId: string, appId: string): 
   }
 }
 
-export function initScript(appId: string): boolean {
+export function initScript(appId: string, customSdkUrl?: string): boolean {
+  const url = customSdkUrl ?? 'https://static.howxm.com/sdk.js'
   const hasWindow = typeof window !== 'undefined'
   if (!hasWindow) throw Error('Howxm depends on window. Window is undefined.')
 
-  const scriptCode = `function _howxm(){_howxmQueue.push(arguments)}window._howxmQueue=window._howxmQueue||[],_howxm("setAppID","${appId}"),function(){if(!document.getElementById("howxm_script")){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.setAttribute("id","howxm_script"),e.type="text/javascript",e.async=!0,e.src="https://static.howxm.com/sdk.js",t.parentNode.insertBefore(e,t)}}();`
+  const scriptCode = `function _howxm(){_howxmQueue.push(arguments)}window._howxmQueue=window._howxmQueue||[],_howxm("setAppID","${appId}"),function(){if(!document.getElementById("howxm_script")){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.setAttribute("id","howxm_script"),e.type="text/javascript",e.async=!0,e.src="${url}",t.parentNode.insertBefore(e,t)}}();`
   const isAppended = appendHeadScript(scriptCode, 'howxm-init-script', appId)
   if (isAppended && hasWindow && (window as unknown as IWindowHowxmEmbedded)._howxm) {
     return true

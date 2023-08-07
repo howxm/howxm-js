@@ -100,3 +100,50 @@ export function setExtraAttributesScript(eventAttrs: TAttribute) {
   }
   throwNotInitializedError()
 }
+
+export function onBeforeOpenScript(
+    callback?: (campaignId: string, uid: string, attributes: any) => void
+): void {
+  if (checkReadyState()) {
+    return (window as unknown as IWindowHowxmEmbedded)._howxm('registerCallback', 'onBeforeOpen', callback)
+  }
+  throwNotInitializedError()
+}
+
+export function onOpenScript(
+    callback?: (campaignId: string, uid: string, attributes: any) => void
+): void {
+  if (checkReadyState()) {
+    return (window as unknown as IWindowHowxmEmbedded)._howxm('registerCallback', 'onOpen', callback)
+  }
+  throwNotInitializedError()
+
+}
+
+export function onCloseScript(
+    callback?: (campaignId: string, uid: string) => void
+): void {
+  if (checkReadyState()) {
+    return (window as unknown as IWindowHowxmEmbedded)._howxm('registerCallback', 'onClose', callback)
+  }
+  throwNotInitializedError()
+}
+
+export function onPageCompleteScript(
+    callback?: (campaignId: string, uid: string, fieldsEntry: any) => void
+): void {
+  if (checkReadyState()) {
+    return (window as unknown as IWindowHowxmEmbedded)._howxm('registerCallback', 'onPageComplete', callback)
+  }
+  throwNotInitializedError()
+}
+
+export function onCompleteScript(
+    callback?: (campaignId: string, uid: string) => void
+): void {
+  if (checkReadyState()) {
+    return (window as unknown as IWindowHowxmEmbedded)._howxm('registerCallback', 'onComplete', callback)
+  }
+  throwNotInitializedError()
+}
+

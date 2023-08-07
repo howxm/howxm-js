@@ -149,6 +149,6 @@ const MyCustomComponent = () => {
 
 ## License
 
-MIT © [jinshuju](https://github.com/jinshuju)
+MIT © [jinshuju](https://github.com/howxm)
 
 更多信息，请查看我们的[帮助文档](https://howxm.com/help/articles/npm-web-sdk-intro)。

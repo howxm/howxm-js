@@ -6,6 +6,11 @@ import {
   openScript,
   eventScript,
   setExtraAttributesScript,
+  onBeforeOpenScript,
+  onOpenScript,
+  onCloseScript,
+  onPageCompleteScript,
+  onCompleteScript,
 } from './dependencies'
 import { TAttribute, TCustomerInfo } from './types'
 
@@ -92,3 +97,54 @@ export const setExtraAttributes = (eventAttrs: TAttribute, callback?: (...data: 
     console.error(`Howxm error: ${(error as Error).message}`)
   }
 }
+
+export const onBeforeOpenHowxm = (
+    callback?: (campaignId: string, uid: string, attributes: any) => void
+): void => {
+  try {
+    onBeforeOpenScript(callback)
+  } catch (error) {
+    console.error(`Howxm error: ${(error as Error).message}`)
+  }
+}
+
+export const onOpenHowxm = (
+    callback?: (campaignId: string, uid: string, attributes: any) => void
+): void => {
+  try {
+    onOpenScript(callback)
+  } catch (error) {
+    console.error(`Howxm error: ${(error as Error).message}`)
+  }
+}
+
+export const onCloseHowxm = (
+    callback?: (campaignId: string, uid: string) => void
+): void => {
+  try {
+    onCloseScript(callback)
+  } catch (error) {
+    console.error(`Howxm error: ${(error as Error).message}`)
+  }
+}
+
+export const onPageCompleteHowxm = (
+    callback?: (campaignId: string, uid: string, fieldsEntry: any) => void
+): void => {
+  try {
+    onPageCompleteScript(callback)
+  } catch (error) {
+    console.error(`Howxm error: ${(error as Error).message}`)
+  }
+}
+
+export const onCompleteHowxm = (
+    callback?: (campaignId: string, uid: string) => void
+): void => {
+  try {
+    onCompleteScript(callback)
+  } catch (error) {
+    console.error(`Howxm error: ${(error as Error).message}`)
+  }
+}
+

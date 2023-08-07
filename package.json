@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "description": "Official NPM wrapper for the howxm JavaScript client",
   "main": "index.js",
-  "repository": "https://github.com/jinshuju/howxm-js.git",
+  "repository": "https://github.com/howxm/howxm-js.git",
   "author": "fang.yang <yangfang2028@gmail.com>",
   "license": "MIT",
   "module": "dist/index.es.js",

@@ -6,7 +6,7 @@ Thank you for your interest in contributing to react-use-howxm!
 
 #### build dev environment
 
-- Fork repo [howxm-js](https://github.com/jinshuju/howxm-js)
+- Fork repo [howxm-js](https://github.com/howxm/howxm-js)
 - Clone & Install
 
 ```bash

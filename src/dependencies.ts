@@ -1,11 +1,15 @@
 import { IWindowHowxmEmbedded, TAttribute, TCustomerInfo } from './types'
+import { APP_ID } from './constant'
 
 function appendHeadScript(scriptText: string, scriptId: string, appId: string): boolean {
   try {
     const existingScript = document.getElementById(scriptId) as HTMLScriptElement
     if (existingScript) {
-      existingScript?.getAttribute('appId') !== appId &&
+      if (existingScript?.getAttribute('appId') !== appId) {
         (window as unknown as IWindowHowxmEmbedded)._howxm?.('updateHowxm', appId)
+      } else {
+        sessionStorage.setItem(APP_ID, JSON.stringify(appId))
+      }
       return true
     }
     const script = document.createElement('script')

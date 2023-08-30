@@ -1,6 +1,6 @@
 {
   "name": "howxm-js",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Official NPM wrapper for the howxm JavaScript client",
   "main": "index.js",
   "repository": "https://github.com/howxm/howxm-js.git",

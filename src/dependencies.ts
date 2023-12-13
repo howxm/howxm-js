@@ -98,13 +98,6 @@ export function eventScript(eventCode: string, eventAttrs?: TAttribute) {
   throwNotInitializedError()
 }
 
-export function setExtraAttributesScript(eventAttrs: TAttribute) {
-  if (checkReadyState()) {
-    return (window as unknown as IWindowHowxmEmbedded)._howxm('setExtraAttributes', eventAttrs)
-  }
-  throwNotInitializedError()
-}
-
 export function onBeforeOpenScript(
     callback?: (campaignId: string, uid: string, attributes: any) => void
 ): void {

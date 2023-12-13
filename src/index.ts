@@ -5,7 +5,6 @@ import {
   initScript,
   openScript,
   eventScript,
-  setExtraAttributesScript,
   onBeforeOpenScript,
   onOpenScript,
   onCloseScript,
@@ -81,17 +80,6 @@ export const eventHowxm = (
     eventScript(eventCode, eventAttrs)
     if (callback && typeof callback === 'function') {
       callback(`Howxm event trigger success.`)
-    }
-  } catch (error) {
-    console.error(`Howxm error: ${(error as Error).message}`)
-  }
-}
-
-export const setExtraAttributes = (eventAttrs: TAttribute, callback?: (...data: unknown[]) => void): void => {
-  try {
-    setExtraAttributesScript(eventAttrs)
-    if (callback && typeof callback === 'function') {
-      callback(`Howxm set extra attributes success.`)
     }
   } catch (error) {
     console.error(`Howxm error: ${(error as Error).message}`)

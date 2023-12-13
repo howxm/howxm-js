@@ -127,26 +127,6 @@ const MyCustomComponent = () => {
 }
 ```
 
-- Set extra attributes to scalable (Not recommended.[setExtraAttributes API's rules](https://howxm.com/help/articles/web-sdk-intro#5-setextraattributes))
-
-```tsx
-import React from 'react'
-import { setExtraAttributes } from 'howxm-js'
-
-const myLogger = console.info
-
-const MyCustomComponent = () => {
-  const extraAttrs = {
-    plan: 'basic',
-    vip_level: '1',
-  }
-
-  const handleTriggerEvent = () => {
-    setExtraAttributes(eventAttrs, myLogger)
-  }
-}
-```
-
 ## License
 
 MIT © [jinshuju](https://github.com/howxm)

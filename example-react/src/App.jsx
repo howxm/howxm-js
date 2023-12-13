@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-import { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, setExtraAttributes, onBeforeOpenHowxm, onOpenHowxm, onCloseHowxm, onPageCompleteHowxm, onCompleteHowxm } from 'howxm-js'
+import { initHowxm, identifyHowxm, openHowxm, checkOpenHowxm, eventHowxm, onBeforeOpenHowxm, onOpenHowxm, onCloseHowxm, onPageCompleteHowxm, onCompleteHowxm } from 'howxm-js'
 
 const myLogger = console.info
 
@@ -62,23 +62,12 @@ const App = () => {
     })
   }
 
-  const handleSetExtraAttributes = () => {
-    const extraAttrs = {
-      plan: 'basic',
-      vip_level: '1',
-    }
-    setExtraAttributes(extraAttrs, () => {
-      myLogger('setExtraAttributes success')
-    })
-  }
-
   return (
     <>
       <h1>Howxm SDK React Example</h1>
       <button onClick={handleOpenClick}>Open</button>
       <button onClick={handleCheckOpenClick}>CheckOpen</button>
       <button onClick={handleTriggerEvent}>TriggerEvent</button>
-      <button onClick={handleSetExtraAttributes}>setExtraAttributes</button>
     </>
   )
 }

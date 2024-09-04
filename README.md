@@ -14,7 +14,8 @@ npm install --save howxm-js
 
 ## Publish
 ```bash
-git push --follow-tags origin <your version> && npm publish
+npm run release
+git push --follow-tags origin master && npm publish
 ```
 
 ## Usage

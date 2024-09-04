@@ -12,6 +12,11 @@
 npm install --save howxm-js
 ```
 
+## Publish
+```bash
+git push --follow-tags origin <your version> && npm publish
+```
+
 ## Usage
 
 - Initializing Howxm
